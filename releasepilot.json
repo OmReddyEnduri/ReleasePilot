@@ -1,0 +1,45 @@
+{
+  "$schema": "https://raw.githubusercontent.com/OmReddyEnduri/ReleasePilot/main/schema.json",
+  "project_name": "ReleasePilot",
+  "version": "0.1.0",
+  "tag_prefix": "v",
+  "changelog_file": "CHANGELOG.md",
+  "version_files": [
+    "releasepilot/__init__.py",
+    "pyproject.toml"
+  ],
+  "packaging": {
+    "dist_dir": "dist",
+    "formats": [
+      "zip",
+      "tar.gz"
+    ],
+    "include": [
+      "releasepilot/**",
+      "README.md",
+      "LICENSE",
+      "CHANGELOG.md",
+      "pyproject.toml",
+      "releasepilot.json"
+    ],
+    "exclude": [
+      "**/__pycache__/**",
+      "**/*.pyc",
+      "**/*.pyo",
+      "**/.git/**",
+      "**/dist/**",
+      "**/.venv/**",
+      "**/node_modules/**",
+      "**/.pytest_cache/**"
+    ],
+    "checksum_file": "SHA256SUMS"
+  },
+  "checks": {
+    "require_clean_git": false,
+    "require_tag_match": false,
+    "require_changelog_entry": true,
+    "require_semver": true,
+    "verify_checksums": true,
+    "sync_version_files": true
+  }
+}
